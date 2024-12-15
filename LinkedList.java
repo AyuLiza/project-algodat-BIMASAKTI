@@ -1,5 +1,6 @@
 public class LinkedList {
-    private Bus head; 
+    Bus head;
+
     public LinkedList() {
         this.head = null;
     }
@@ -7,13 +8,13 @@ public class LinkedList {
     // Menambahkan bus ke linked list
     public void tambahBus(Bus bus) {
         if (head == null) {
-            head = bus; 
+            head = bus;
         } else {
             Bus current = head;
             while (current.next != null) {
-                current = current.next; 
+                current = current.next;
             }
-            current.next = bus; 
+            current.next = bus;
         }
         System.out.println("Bus berhasil ditambahkan: " + bus);
     }
@@ -27,20 +28,20 @@ public class LinkedList {
 
         if (head.id == id) {
             System.out.println("Bus dihapus: " + head);
-            head = head.next; 
+            head = head.next;
             return;
         }
 
         Bus current = head;
         while (current.next != null && current.next.id != id) {
-            current = current.next; 
+            current = current.next;
         }
 
         if (current.next == null) {
             System.out.println("Bus dengan ID " + id + " tidak ditemukan.");
         } else {
             System.out.println("Bus dihapus: " + current.next);
-            current.next = current.next.next; 
+            current.next = current.next.next;
         }
     }
 
@@ -54,7 +55,7 @@ public class LinkedList {
         Bus current = head;
         while (current != null) {
             System.out.println(current);
-            current = current.next; 
+            current = current.next;
         }
     }
 }
