@@ -16,7 +16,6 @@ public class LinkedList {
             }
             current.next = bus;
         }
-        System.out.println("Bus berhasil ditambahkan: " + bus);
     }
 
     // Menghapus bus dari linked list berdasarkan ID
@@ -27,7 +26,9 @@ public class LinkedList {
         }
 
         if (head.id == id) {
-            System.out.println("Bus dihapus: " + head);
+            System.out.println("Bus ID: " + head.id + ", Nama: " + head.nama + ", Kapasitas: "
+                    + head.kapasitas + ", Jadwal: " + head.jadwalKeberangkatan + ", Rute: " + head.rute
+                    + " telah dihapus dari list.");
             head = head.next;
             return;
         }
@@ -40,7 +41,9 @@ public class LinkedList {
         if (current.next == null) {
             System.out.println("Bus dengan ID " + id + " tidak ditemukan.");
         } else {
-            System.out.println("Bus dihapus: " + current.next);
+            System.out.println("Bus ID: " + current.next.id + ", Nama: " + current.next.nama + ", Kapasitas: "
+                    + current.next.kapasitas + ", Jadwal: " + current.next.jadwalKeberangkatan + ", Rute: "
+                    + current.next.rute + " telah dihapus dari list.");
             current.next = current.next.next;
         }
     }
@@ -51,11 +54,19 @@ public class LinkedList {
             System.out.println("Tidak ada bus yang tersedia dalam sistem.");
             return;
         }
-
+        System.out
+                .println("--------------------------------------------------------------------------------------");
+        System.out.printf("| %-6s || %-20s || %-10s || %-10s || %-20s |\n", "Bus ID", "Nama", "Kapasitas", "Jadwal",
+                "Rute");
+        System.out
+                .println("--------------------------------------------------------------------------------------");
         Bus current = head;
         while (current != null) {
-            System.out.println(current);
+            System.out.printf("| %-6d || %-20s || %-10d || %-10s || %-20s |\n", current.id, current.nama,
+                    current.kapasitas, current.jadwalKeberangkatan, current.rute);
             current = current.next;
         }
+        System.out
+                .println("--------------------------------------------------------------------------------------");
     }
 }
