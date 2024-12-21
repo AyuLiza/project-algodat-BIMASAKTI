@@ -113,7 +113,7 @@ public class Main {
                 queue.enqueue(17, "Qita", "23:00", 10);
                 queue.enqueue(18, "Rita", "07:00", 7);
 
-                System.out.println("\nDaftar Antrian Bus:");
+                System.out.println("\nDaftar Antrian Pesanan Bus:");
                 queue.tampilanQueue();
                 System.out.println();
 

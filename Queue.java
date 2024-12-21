@@ -35,17 +35,17 @@ public class Queue {
         if (front == null) {
             System.out.println("Antrian kosong.");
         } else {
-            System.out.println("+-----+----------------+--------------+-------------+");
-            System.out.println("| ID  | Nama Pemesan   | Waktu Pesanan| Nomor Kursi |");
-            System.out.println("+-----+----------------+--------------+-------------+");
+            System.out.println("+--------+--------------+---------------+---------------+");
+            System.out.println("| ID Bus | Nama Pemesan | Waktu Pesanan | Nomor Kursi   |");
+            System.out.println("+--------+--------------+---------------+---------------+");
 
             Pesanan current = front;
             while (current != null) {
-                System.out.printf("| %-4d | %-14s | %-12s | %-10d |\n",
+                System.out.printf("| %-6d | %-12s | %-13s | %-13d |\n",
                         current.idBus, current.namaPemesan, current.waktuPesanan, current.noKursi);
                 current = current.next;
             }
-            System.out.println("+-----+----------------+--------------+-------------+");
+            System.out.println("+--------+--------------+---------------+---------------+");
         }
     }
 }
