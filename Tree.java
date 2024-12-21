@@ -1,4 +1,4 @@
-public class BimasaktiTree {
+public class Tree {
     private TreeNode root;
 
     // Method buat rute
@@ -20,6 +20,7 @@ public class BimasaktiTree {
             }
         }
     }
+
     private TreeNode findNode(TreeNode node, String city) {
         if (node == null) {
             return null;
@@ -33,6 +34,7 @@ public class BimasaktiTree {
         }
         return findNode(node.sibling, city);
     }
+
     public void displayRoutes() {
         System.out.println("Struktur Rute Perjalanan:");
         displayRoutes(root, "");
@@ -45,6 +47,7 @@ public class BimasaktiTree {
             displayRoutes(node.sibling, indent);
         }
     }
+
     public void findRoute(String destination) {
         StringBuilder route = new StringBuilder();
         if (findRoute(root, destination, route)) {
@@ -54,6 +57,7 @@ public class BimasaktiTree {
             System.out.println("Kota " + destination + " tidak ditemukan.");
         }
     }
+
     private boolean findRoute(TreeNode node, String destination, StringBuilder route) {
         if (node == null) {
             return false;
